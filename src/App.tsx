@@ -15,11 +15,6 @@ function App() {
   });
 
   const handleAddContact = (newContact: Contact) => {
-    if (state.contacts.some((contact) => contact.name.toLowerCase() === newContact.name.toLowerCase())) {
-      alert(`${newContact.name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')} is already in contacts`);
-      return;
-    }
-   
     setState((prevState) => ({
       contacts: [...prevState.contacts, newContact],
       filter: '',
@@ -45,7 +40,7 @@ function App() {
   return (
     <>
       <h1>Phonebook</h1>
-      <ContactForm onAddContact={handleAddContact} />
+      <ContactForm contacts={state.contacts} onAddContact={handleAddContact} />
       <h2>Contacts</h2>
       <Filter filter={state.filter} onFilterChange={handleFilterChange} />
       <ContactList contacts={filteredContacts} onDeleteContact={handleDeleteContact} />
