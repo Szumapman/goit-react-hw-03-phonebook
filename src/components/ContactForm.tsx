@@ -25,7 +25,7 @@ export const ContactForm = ({ contacts, onAddContact }: ContactFormProps) => {
     const number = newPhone.trim();
 
     if (contacts.some((contact) => contact.name.toLowerCase() === name)) {
-      alert(`${name} is already in contacts`);
+      alert(`${name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')} is already in contacts`);
       return;
     }
 
