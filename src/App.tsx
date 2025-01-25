@@ -18,8 +18,6 @@ function App() {
     setState((prevState) => ({
       contacts: [...prevState.contacts, newContact],
       filter: '',
-      name: '',
-      number: '',
     }));
   };
 
