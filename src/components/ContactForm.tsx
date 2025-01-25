@@ -11,7 +11,7 @@ type ContactFormProps = {
 
 
 export const ContactForm = ({ contacts, onAddContact }: ContactFormProps) => {
-  const namePattern = /^[a-zA-Zа-яА-Я]+(([\' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
+  const namePattern = /^[a-zA-Z\u0400-\u04FF]+(([' \-][a-zA-Z\u0400-\u04FF ])?[a-zA-Z\u0400-\u04FF]*)*$/;
   const numberPattern = /\(?\+?\d{1,4}?\)?[\-.\s]?\(?\d{1,3}?\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}/;
   const nameString = "Name";
   const numberSting = "Number";
