@@ -29,7 +29,6 @@ function App() {
   };
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value)
     setState((prevState) => ({
       ...prevState,
       filter: event.target.value,
